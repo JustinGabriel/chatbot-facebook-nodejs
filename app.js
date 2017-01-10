@@ -193,8 +193,8 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
       },
       {
         "content_type":"text",
-        "title":"Sales",
-        "payload":"Sales"
+        "title":"Developer",
+        "payload":"Developer"
       },
       {
         "content_type":"text",
