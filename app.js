@@ -133,8 +133,8 @@ function receivedMessage(event) {
 	if (!sessionIds.has(senderID)) {
 		sessionIds.set(senderID, uuid.v1());
 	}
-	console.log("Received message for user %d and page %d at %d with message:", senderID, recipientID, timeOfMessage);
-	console.log(JSON.stringify(message));
+	//console.log("Received message for user %d and page %d at %d with message:", senderID, recipientID, timeOfMessage);
+	//console.log(JSON.stringify(message));
 
 	var isEcho = message.is_echo;
 	var messageId = message.mid;
@@ -184,27 +184,6 @@ function handleEcho(messageId, appId, metadata) {
 
 function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 	switch (action) {
-		case "job-enquiry"
-		var replies = [
-		{
-        "content_type":"text",
-        "title":"Accountant",
-        "payload":"Accountant"
-      },
-      {
-        "content_type":"text",
-        "title":"Sales",
-        "payload":"Sales"
-      },
-      {
-        "content_type":"text",
-        "title":"Not interested",
-        "payload":"Not interested"
-      }
-      ];
-      sendQuickReply(sender, responseText, replies);
-
-		break;
 		default:
 			//unhandled action, just send back the text
 			sendTextMessage(sender, responseText);
@@ -883,5 +862,5 @@ function isDefined(obj) {
 
 // Spin up the server
 app.listen(app.get('port'), function () {
-	console.log('running on port', app.get('port'))
+console.log('running on port', app.get('port'))
 })
