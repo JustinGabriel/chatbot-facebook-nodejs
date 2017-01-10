@@ -209,7 +209,7 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 			if (phone_number != '' && user_name != '' && previous_job != '' && years_of_experience != '' && job_vacancy != '')
 
 				{
-					let emailContent = 'A new short form application from ' + user_name ' for the job: ' + job_vacancy +
+					let emailContent = 'A new short form application from ' + user_name + ' for the job: ' + job_vacancy +
 					'.<br> Previous job position: ' + previous_job + '.' +
 					'.<br> Years of experience: ' + years_of_experience + '.' +
 					'.<br> Phone Number: ' + phone_number + '.' ;
