@@ -29,7 +29,11 @@ if (!config.SERVER_URL) { //used for ink to static files
 
 
 
-app.set('port', (process.env.PORT || 5000))
+var port = process.env.PORT || 5000
+
+server.listen(port, function() {
+    console.log("App is running on port " + port);
+});
 
 //verify request came from facebook
 app.use(bodyParser.json({
