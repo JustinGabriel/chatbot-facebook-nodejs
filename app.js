@@ -29,11 +29,7 @@ if (!config.SERVER_URL) { //used for ink to static files
 
 
 
-var port = process.env.PORT || 5000
-
-server.listen(port, function() {
-    console.log("App is running on port " + port);
-});
+app.set('port', (process.env.PORT || 5000))
 
 //verify request came from facebook
 app.use(bodyParser.json({
@@ -137,8 +133,8 @@ function receivedMessage(event) {
 	if (!sessionIds.has(senderID)) {
 		sessionIds.set(senderID, uuid.v1());
 	}
-	//console.log("Received message for user %d and page %d at %d with message:", senderID, recipientID, timeOfMessage);
-	//console.log(JSON.stringify(message));
+	console.log("Received message for user %d and page %d at %d with message:", senderID, recipientID, timeOfMessage);
+	console.log(JSON.stringify(message));
 
 	var isEcho = message.is_echo;
 	var messageId = message.mid;
@@ -197,8 +193,8 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
       },
       {
         "content_type":"text",
-        "title":"Designer",
-        "payload":"Designer"
+        "title":"Sales",
+        "payload":"Sales"
       },
       {
         "content_type":"text",
